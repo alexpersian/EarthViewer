@@ -15,6 +15,8 @@
 		EA59BBAE2B6FED09003EC22C /* earthviews.json in Resources */ = {isa = PBXBuildFile; fileRef = EA59BBAD2B6FED09003EC22C /* earthviews.json */; };
 		EA59BBB22B7000C7003EC22C /* EarthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA59BBB12B7000C6003EC22C /* EarthView.swift */; };
 		EA59BBB42B703608003EC22C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA59BBB32B703608003EC22C /* Launch Screen.storyboard */; };
+		EA59BBB62B714899003EC22C /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA59BBB52B714899003EC22C /* ImageView.swift */; };
+		EA59BBB82B7148A4003EC22C /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA59BBB72B7148A4003EC22C /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		EA59BBAD2B6FED09003EC22C /* earthviews.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = earthviews.json; sourceTree = "<group>"; };
 		EA59BBB12B7000C6003EC22C /* EarthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthView.swift; sourceTree = "<group>"; };
 		EA59BBB32B703608003EC22C /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		EA59BBB52B714899003EC22C /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		EA59BBB72B7148A4003EC22C /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				EA59BB9C2B6FE753003EC22C /* EarthViewerApp.swift */,
 				EA59BB9E2B6FE753003EC22C /* ContentView.swift */,
 				EA59BBB12B7000C6003EC22C /* EarthView.swift */,
+				EA59BBB52B714899003EC22C /* ImageView.swift */,
+				EA59BBB72B7148A4003EC22C /* DetailView.swift */,
 				EA59BBA02B6FE753003EC22C /* Item.swift */,
 				EA59BBAD2B6FED09003EC22C /* earthviews.json */,
 				EA59BBA22B6FE756003EC22C /* Assets.xcassets */,
@@ -153,6 +159,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA59BBB62B714899003EC22C /* ImageView.swift in Sources */,
+				EA59BBB82B7148A4003EC22C /* DetailView.swift in Sources */,
 				EA59BB9F2B6FE753003EC22C /* ContentView.swift in Sources */,
 				EA59BBB22B7000C7003EC22C /* EarthView.swift in Sources */,
 				EA59BBA12B6FE753003EC22C /* Item.swift in Sources */,
@@ -290,6 +298,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Allows for saving images to your Camera Roll.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -329,6 +338,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Allows for saving images to your Camera Roll.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
