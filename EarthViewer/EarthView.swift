@@ -12,7 +12,7 @@ struct EarthView: View {
     var model: Item
 
     var body: some View {
-        let imageView = ImageView(imageURL: model.image)
+        let imageView = ImageView(model.image)
 
         ZStack(alignment: .bottomTrailing, content: {
             imageView
@@ -23,7 +23,7 @@ struct EarthView: View {
                 country: model.country,
                 region: model.region,
                 detailTapped: { openMaps() },
-                saveTapped: { saveCurrentImage(imageView) }
+                saveTapped: { saveImage(imageView) }
             )
             .padding(.trailing, 8)
             .zIndex(1)
@@ -36,25 +36,10 @@ struct EarthView: View {
         }
     }
 
-    private func saveCurrentImage(_ view: ImageView) {
-        let image = view.snapshot()
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-    }
-}
-
-extension View {
-    func snapshot() -> UIImage {
-        let controller = UIHostingController(rootView: self)
-        let view = controller.view
-
-        let targetSize = controller.view.intrinsicContentSize
-        view?.bounds = CGRect(origin: .zero, size: targetSize)
-        view?.backgroundColor = .clear
-
-        let renderer = UIGraphicsImageRenderer(size: targetSize)
-
-        return renderer.image { _ in
-            view?.drawHierarchy(in: controller.view.bounds, afterScreenUpdates: true)
+    @MainActor private func saveImage(_ view: ImageView) {
+        let renderer = ImageRenderer(content: view)
+        if let image = renderer.uiImage {
+            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         }
     }
 }
