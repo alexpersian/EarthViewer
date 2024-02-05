@@ -8,7 +8,7 @@ struct DetailView: View {
     var saveTapped: () -> Void
 
     var body: some View {
-        HStack(spacing: 12, content: {
+        HStack(alignment: .bottom, spacing: 12, content: {
             VStack(alignment: .trailing) {
                 Text(format(country: country, region: region))
                     .font(.headline)
@@ -22,13 +22,13 @@ struct DetailView: View {
             }
             .onTapGesture { detailTapped() }
 
-            Image(systemName: "square.and.arrow.down")
-                .font(.title)
+            Image(systemName: "photo.badge.arrow.down")
+                .font(.title2)
                 .foregroundStyle(.white)
+                .padding(.bottom, 4)
                 .onTapGesture { saveTapped() }
         })
-        .padding(.horizontal, 12)
-        .padding(.bottom, 12)
+        .padding([.horizontal, .bottom], 12)
         .padding(.top, 8)
         .background(Color.black.opacity(0.55))
         .cornerRadius(4)

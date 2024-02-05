@@ -10,6 +10,7 @@ import SwiftData
 
 struct EarthView: View {
     var model: Item
+    @State var saveSuccess: Bool = false
 
     var body: some View {
         let imageView = ImageView(model.image)
@@ -28,6 +29,12 @@ struct EarthView: View {
             .padding(.trailing, 8)
             .zIndex(1)
         })
+        .overlay {
+            if saveSuccess {
+                ConfirmationView()
+                    .transition(.opacity.animation(.easeInOut))
+            }
+        }
     }
 
     private func openMaps() {
@@ -40,7 +47,17 @@ struct EarthView: View {
         let renderer = ImageRenderer(content: view)
         if let image = renderer.uiImage {
             UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+            // This is not great because we don't actually know the result of the save.
+            // Since we can't use #selector and @objc within SwiftUI space to have showConfirmation
+            // be the completionSelector I'm leaving this as a limitation for now.
+            showConfirmation()
         }
+    }
+
+    private func showConfirmation() {
+        saveSuccess = true
+        let work = DispatchWorkItem { saveSuccess = false }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: work)
     }
 }
 
