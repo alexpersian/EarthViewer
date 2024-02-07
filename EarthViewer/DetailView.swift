@@ -1,16 +1,15 @@
 import SwiftUI
 
 struct DetailView: View {
-
-    var country: String
-    var region: String
+    var model: Item
     var detailTapped: () -> Void
     var saveTapped: () -> Void
 
     var body: some View {
-        HStack(alignment: .bottom, spacing: 12, content: {
+        HStack(spacing: 12, content: {
             VStack(alignment: .trailing) {
-                Text(format(country: country, region: region))
+                Text(format(country: model.country, region: model.region))
+                    .lineLimit(1)
                     .font(.headline)
                     .fontDesign(.rounded)
                     .foregroundStyle(.white)
@@ -19,13 +18,19 @@ struct DetailView: View {
                     .fontDesign(.rounded)
                     .foregroundStyle(.white)
                     .underline()
+                    .padding(.bottom, 2)
+                Text(model.attribution)
+                    .lineLimit(1)
+                    .font(.caption2)
+                    .foregroundStyle(.white)
+                    .italic()
             }
             .onTapGesture { detailTapped() }
 
             Image(systemName: "photo.badge.arrow.down")
                 .font(.title2)
                 .foregroundStyle(.white)
-                .padding(.bottom, 4)
+                .padding(.top, 8)
                 .onTapGesture { saveTapped() }
         })
         .padding([.horizontal, .bottom], 12)
@@ -43,9 +48,17 @@ struct DetailView: View {
 }
 
 #Preview {
+    let item = Item(
+        id: "",
+        image: "",
+        country: "Argentina",
+        region: "Volodarsky District, Astrakhan Oblast",
+        map: "",
+        attribution: "©2019 Aerodata International Surveys, Maxar Technologies, The GeoInformation Group | InterAtlas"
+    )
+
     return DetailView(
-        country: "Chile", 
-        region: "Tamarugal",
+        model: item,
         detailTapped: {},
         saveTapped: {}
     )

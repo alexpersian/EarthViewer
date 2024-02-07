@@ -24,7 +24,7 @@ struct EarthViewerApp: App {
         WindowGroup {
             // Seed ContentView with a random view index to start.
             // Hard coded max is bad, but data size is known and fixed.
-            ContentView(viewIndex: .random(in: 0..<1520))
+            ContentView(viewIndex: .random(in: 0..<2604))
         }
         .modelContainer(for: Item.self) { result in
             do {
@@ -41,7 +41,8 @@ struct EarthViewerApp: App {
 
                 // Decode JSON into initial models and populate database
                 let data = try Data(contentsOf: url)
-                let models = try JSONDecoder().decode([Item].self, from: data)
+                var models = try JSONDecoder().decode([Item].self, from: data)
+                models.sort { $0.id < $1.id }
                 models.forEach { container.mainContext.insert($0) }
             } catch {
                 fatalError("Could not create ModelContainer: \(error)")
