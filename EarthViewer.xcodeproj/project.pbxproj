@@ -47,6 +47,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA199CB42B76848B00754EF2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EA59BBB12B7000C6003EC22C /* EarthView.swift */,
+				EA59BBBB2B718104003EC22C /* ConfirmationView.swift */,
+				EA59BB9E2B6FE753003EC22C /* ContentView.swift */,
+				EA59BBB72B7148A4003EC22C /* DetailView.swift */,
+				EA59BBB52B714899003EC22C /* ImageView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EA199CB52B76849100754EF2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EA59BBA02B6FE753003EC22C /* Item.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EA199CB62B76849900754EF2 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				EA59BBAD2B6FED09003EC22C /* earthviews.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		EA59BB902B6FE753003EC22C = {
 			isa = PBXGroup;
 			children = (
@@ -67,17 +95,13 @@
 			isa = PBXGroup;
 			children = (
 				EA59BB9C2B6FE753003EC22C /* EarthViewerApp.swift */,
-				EA59BB9E2B6FE753003EC22C /* ContentView.swift */,
-				EA59BBB12B7000C6003EC22C /* EarthView.swift */,
-				EA59BBB52B714899003EC22C /* ImageView.swift */,
-				EA59BBB72B7148A4003EC22C /* DetailView.swift */,
-				EA59BBBB2B718104003EC22C /* ConfirmationView.swift */,
-				EA59BBA02B6FE753003EC22C /* Item.swift */,
-				EA59BBAD2B6FED09003EC22C /* earthviews.json */,
 				EA59BBA22B6FE756003EC22C /* Assets.xcassets */,
 				EA59BBA42B6FE756003EC22C /* EarthViewer.entitlements */,
-				EA59BBA52B6FE756003EC22C /* Preview Content */,
 				EA59BBB32B703608003EC22C /* Launch Screen.storyboard */,
+				EA59BBA52B6FE756003EC22C /* Preview Content */,
+				EA199CB62B76849900754EF2 /* Data */,
+				EA199CB52B76849100754EF2 /* Models */,
+				EA199CB42B76848B00754EF2 /* Views */,
 			);
 			path = EarthViewer;
 			sourceTree = "<group>";
