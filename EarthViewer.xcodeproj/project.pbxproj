@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA199CB92B77FC4200754EF2 /* RemoteImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA199CB82B77FC4200754EF2 /* RemoteImageLoader.swift */; };
+		EA5845332B82E55400911B4E /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5845322B82E55400911B4E /* SessionManager.swift */; };
 		EA59BB9D2B6FE753003EC22C /* EarthViewerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA59BB9C2B6FE753003EC22C /* EarthViewerApp.swift */; };
 		EA59BB9F2B6FE753003EC22C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA59BB9E2B6FE753003EC22C /* ContentView.swift */; };
 		EA59BBA12B6FE753003EC22C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA59BBA02B6FE753003EC22C /* Item.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EA199CB82B77FC4200754EF2 /* RemoteImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageLoader.swift; sourceTree = "<group>"; };
+		EA5845322B82E55400911B4E /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		EA59BB992B6FE753003EC22C /* EarthViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EarthViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA59BB9C2B6FE753003EC22C /* EarthViewerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthViewerApp.swift; sourceTree = "<group>"; };
 		EA59BB9E2B6FE753003EC22C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -75,6 +79,15 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		EA199CB72B77FC3000754EF2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EA199CB82B77FC4200754EF2 /* RemoteImageLoader.swift */,
+				EA5845322B82E55400911B4E /* SessionManager.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		EA59BB902B6FE753003EC22C = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +114,7 @@
 				EA59BBA52B6FE756003EC22C /* Preview Content */,
 				EA199CB62B76849900754EF2 /* Data */,
 				EA199CB52B76849100754EF2 /* Models */,
+				EA199CB72B77FC3000754EF2 /* Utils */,
 				EA199CB42B76848B00754EF2 /* Views */,
 			);
 			path = EarthViewer;
@@ -186,8 +200,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA199CB92B77FC4200754EF2 /* RemoteImageLoader.swift in Sources */,
 				EA59BBB62B714899003EC22C /* ImageView.swift in Sources */,
 				EA59BBB82B7148A4003EC22C /* DetailView.swift in Sources */,
+				EA5845332B82E55400911B4E /* SessionManager.swift in Sources */,
 				EA59BBBC2B718104003EC22C /* ConfirmationView.swift in Sources */,
 				EA59BB9F2B6FE753003EC22C /* ContentView.swift in Sources */,
 				EA59BBB22B7000C7003EC22C /* EarthView.swift in Sources */,

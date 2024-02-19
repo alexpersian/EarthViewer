@@ -14,7 +14,6 @@ struct ImageView: View {
         if let image = UIImage(data: remoteImageLoader.data) {
             Image(uiImage: image)
                 .resizable()
-                .renderingMode(.original)
                 .scaledToFill()
                 .ignoresSafeArea()
                 .transition(.opacity.animation(.default))
@@ -22,22 +21,6 @@ struct ImageView: View {
             ProgressView()
                 .transition(.opacity.animation(.default))
         }
-    }
-}
-
-final class RemoteImageLoader: ObservableObject {
-    @Published var data: Data = Data()
-
-    init(imageURL: URL) {
-        URLSession.shared.dataTask(with: imageURL) { data, response, error in
-            if let data = data {
-                DispatchQueue.main.async { self.data = data }
-            }
-            else if let error = error {
-                print("Error with image fetch: \(error)")
-            }
-        }
-        .resume()
     }
 }
 
