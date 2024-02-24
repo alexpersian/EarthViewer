@@ -23,7 +23,8 @@ struct EarthView: View {
             DetailView(
                 model: model,
                 detailTapped: { openMaps() },
-                saveTapped: { saveImage(imageView) }
+                saveTapped: { saveImage(imageView) },
+                favoriteTapped: { markFavorite() }
             )
             .padding(.horizontal, 8)
             .zIndex(1)
@@ -58,6 +59,11 @@ struct EarthView: View {
         let work = DispatchWorkItem { saveSuccess = false }
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: work)
     }
+
+    private func markFavorite() {
+        let newFaveData = FavoriteData(isFaved: !model.faveData.isFaved, timestamp: Date())
+        model.faveData = newFaveData
+    }
 }
 
 #Preview {
@@ -67,7 +73,8 @@ struct EarthView: View {
         country: "Country Name",
         region: "Really Super Duper Long",
         map: "https://www.google.com/maps/@-19.140249,-68.683995,14z/data=!3m1!1e3",
-        attribution: "©2019 CNES / Astrium, Cnes/Spot Image, Maxar Technologies"
+        attribution: "©2019 CNES / Astrium, Cnes/Spot Image, Maxar Technologies",
+        faveData: FavoriteData(isFaved: false, timestamp: Date())
     )
     return EarthView(model: item)
 }

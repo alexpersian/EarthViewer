@@ -4,6 +4,7 @@ struct DetailView: View {
     var model: Item
     var detailTapped: () -> Void
     var saveTapped: () -> Void
+    var favoriteTapped: () -> Void
 
     var body: some View {
         HStack(spacing: 12, content: {
@@ -32,6 +33,12 @@ struct DetailView: View {
                 .foregroundStyle(.white)
                 .padding(.top, 8)
                 .onTapGesture { saveTapped() }
+
+            Image(systemName: model.faveData.isFaved ? "star.fill" : "star")
+                .font(.title2)
+                .foregroundStyle(.white)
+                .padding(.top, 4)
+                .onTapGesture { favoriteTapped() }
         })
         .padding([.horizontal, .bottom], 12)
         .padding(.top, 8)
@@ -54,12 +61,14 @@ struct DetailView: View {
         country: "Argentina",
         region: "Volodarsky District, Astrakhan Oblast",
         map: "",
-        attribution: "©2019 Aerodata International Surveys, Maxar Technologies, The GeoInformation Group | InterAtlas"
+        attribution: "©2019 Aerodata International Surveys, Maxar Technologies, The GeoInformation Group | InterAtlas",
+        faveData: FavoriteData(isFaved: false, timestamp: Date())
     )
 
     return DetailView(
         model: item,
         detailTapped: {},
-        saveTapped: {}
+        saveTapped: {},
+        favoriteTapped: {}
     )
 }
