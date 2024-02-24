@@ -17,6 +17,8 @@ struct EarthView: View {
 
         ZStack(alignment: .bottomTrailing, content: {
             imageView
+                .scaledToFill()
+                .ignoresSafeArea()
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
                 .zIndex(0)
 

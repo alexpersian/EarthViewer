@@ -14,8 +14,6 @@ struct ImageView: View {
         if let image = UIImage(data: remoteImageLoader.data) {
             Image(uiImage: image)
                 .resizable()
-                .scaledToFill()
-                .ignoresSafeArea()
                 .transition(.opacity.animation(.default))
         } else {
             ProgressView()

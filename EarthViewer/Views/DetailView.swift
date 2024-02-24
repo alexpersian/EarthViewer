@@ -64,7 +64,6 @@ struct DetailView: View {
         attribution: "©2019 Aerodata International Surveys, Maxar Technologies, The GeoInformation Group | InterAtlas",
         faveData: FavoriteData(isFaved: false, timestamp: Date())
     )
-
     return DetailView(
         model: item,
         detailTapped: {},
