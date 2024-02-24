@@ -16,6 +16,7 @@ struct PreviewView: View {
                 .scaledToFill()
                 .cornerRadius(8)
             Text(format(region: model.region, country: model.country))
+            Spacer()
         }
     }
 

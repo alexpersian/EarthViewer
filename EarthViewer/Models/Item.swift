@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-final class Item: Decodable {
+final class Item: Decodable, Identifiable {
     let id: String
     let image: String
     let country: String

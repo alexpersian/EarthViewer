@@ -5,6 +5,9 @@ struct DetailView: View {
     var detailTapped: () -> Void
     var saveTapped: () -> Void
     var favoriteTapped: () -> Void
+    var openFavoritesTapped: () -> Void
+
+    @State var showingDialog: Bool = false
 
     var body: some View {
         HStack(spacing: 12, content: {
@@ -20,13 +23,13 @@ struct DetailView: View {
                     .foregroundStyle(.white)
                     .underline()
                     .padding(.bottom, 2)
+                    .onTapGesture { detailTapped() }
                 Text(model.attribution)
                     .lineLimit(1)
                     .font(.caption2)
                     .foregroundStyle(.white)
                     .italic()
             }
-            .onTapGesture { detailTapped() }
 
             Image(systemName: "photo.badge.arrow.down")
                 .font(.title2)
@@ -37,8 +40,14 @@ struct DetailView: View {
             Image(systemName: model.faveData.isFaved ? "star.fill" : "star")
                 .font(.title2)
                 .foregroundStyle(.white)
-                .padding(.top, 4)
+                .padding(.top, 2)
                 .onTapGesture { favoriteTapped() }
+
+            Image(systemName: "folder")
+                .font(.title2)
+                .foregroundStyle(.white)
+                .padding(.top, 4)
+                .onTapGesture { openFavoritesTapped() }
         })
         .padding([.horizontal, .bottom], 12)
         .padding(.top, 8)
@@ -59,6 +68,7 @@ struct DetailView: View {
         model: Item.mock,
         detailTapped: {},
         saveTapped: {},
-        favoriteTapped: {}
+        favoriteTapped: {},
+        openFavoritesTapped: {}
     )
 }

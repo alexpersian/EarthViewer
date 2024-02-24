@@ -11,39 +11,48 @@ import SwiftData
 struct EarthView: View {
     @EnvironmentObject var viewIndex: ViewIndex
     @State var saveSuccess: Bool = false
+    @State var showFavorites: Bool = false
 
     var model: Item
 
     var body: some View {
         let imageView = ImageView(model.image)
 
-        GeometryReader { proxy in
-            ZStack(alignment: .bottomTrailing, content: {
-                imageView
-                    .scaledToFill()
-                    .ignoresSafeArea()
-                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-                    .zIndex(0)
-                    .onTapGesture(coordinateSpace: .global) { loc in
-                        changeImage(advance: loc.x > proxy.size.width / 2)
-                    }
+        NavigationStack {
+            GeometryReader { proxy in
+                ZStack(alignment: .bottomTrailing, content: {
+                    imageView
+                        .scaledToFill()
+                        .ignoresSafeArea()
+                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                        .zIndex(0)
+                        .onTapGesture(coordinateSpace: .global) { loc in
+                            changeImage(advance: loc.x > proxy.size.width / 2)
+                        }
 
-                DetailView(
-                    model: model,
-                    detailTapped: { openMaps() },
-                    saveTapped: { saveImage(imageView) },
-                    favoriteTapped: { markFavorite() }
-                )
-                .padding(.horizontal, 8)
-                .zIndex(1)
-            })
-            .overlay {
-                if saveSuccess {
-                    ConfirmationView()
-                        .transition(.opacity.animation(.easeInOut))
+                    DetailView(
+                        model: model,
+                        detailTapped: { openMaps() },
+                        saveTapped: { saveImage(imageView) },
+                        favoriteTapped: { markFavorite() },
+                        openFavoritesTapped: { showFavoritesList() }
+                    )
+                    .padding(.horizontal, 8)
+                    .zIndex(1)
+                })
+                .overlay {
+                    if saveSuccess {
+                        ConfirmationView()
+                            .transition(.opacity.animation(.easeInOut))
+                    }
                 }
+                .navigationDestination(
+                    isPresented: $showFavorites,
+                    destination: { FavoritesView() }
+                )
             }
         }
+        .tint(.black)
     }
 
     private func changeImage(advance: Bool) {
@@ -76,6 +85,10 @@ struct EarthView: View {
     private func markFavorite() {
         let newFaveData = FavoriteData(isFaved: !model.faveData.isFaved, timestamp: Date())
         model.faveData = newFaveData
+    }
+
+    private func showFavoritesList() {
+        showFavorites = true
     }
 }
 
