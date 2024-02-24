@@ -10,6 +10,8 @@ import SwiftData
 
 @main
 struct EarthViewerApp: App {
+    @StateObject var viewIndex = ViewIndex()
+
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([Item.self])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
@@ -22,9 +24,8 @@ struct EarthViewerApp: App {
 
     var body: some Scene {
         WindowGroup {
-            // Seed ContentView with a random view index to start.
-            // Hard coded max is bad, but data size is known and fixed.
-            ContentView(viewIndex: .random(in: 0..<2604))
+            ContentView()
+                .environmentObject(viewIndex)
         }
         .modelContainer(for: Item.self) { result in
             do {

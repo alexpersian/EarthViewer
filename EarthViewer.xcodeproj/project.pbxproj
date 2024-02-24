@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA040A9A2B8AB04100448687 /* ViewIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA040A992B8AB04100448687 /* ViewIndex.swift */; };
 		EA199CB92B77FC4200754EF2 /* RemoteImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA199CB82B77FC4200754EF2 /* RemoteImageLoader.swift */; };
 		EA5845332B82E55400911B4E /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5845322B82E55400911B4E /* SessionManager.swift */; };
 		EA59BB9D2B6FE753003EC22C /* EarthViewerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA59BB9C2B6FE753003EC22C /* EarthViewerApp.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EA040A992B8AB04100448687 /* ViewIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewIndex.swift; sourceTree = "<group>"; };
 		EA199CB82B77FC4200754EF2 /* RemoteImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageLoader.swift; sourceTree = "<group>"; };
 		EA5845322B82E55400911B4E /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		EA59BB992B6FE753003EC22C /* EarthViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EarthViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				EA59BBA02B6FE753003EC22C /* Item.swift */,
+				EA040A992B8AB04100448687 /* ViewIndex.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				EA59BBB62B714899003EC22C /* ImageView.swift in Sources */,
 				EA9B420E2B8A720D00801449 /* PreviewView.swift in Sources */,
 				EA59BBB82B7148A4003EC22C /* DetailView.swift in Sources */,
+				EA040A9A2B8AB04100448687 /* ViewIndex.swift in Sources */,
 				EA5845332B82E55400911B4E /* SessionManager.swift in Sources */,
 				EA59BBBC2B718104003EC22C /* ConfirmationView.swift in Sources */,
 				EA59BB9F2B6FE753003EC22C /* ContentView.swift in Sources */,

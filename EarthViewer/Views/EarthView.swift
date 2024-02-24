@@ -9,34 +9,45 @@ import SwiftUI
 import SwiftData
 
 struct EarthView: View {
-    var model: Item
+    @EnvironmentObject var viewIndex: ViewIndex
     @State var saveSuccess: Bool = false
+
+    var model: Item
 
     var body: some View {
         let imageView = ImageView(model.image)
 
-        ZStack(alignment: .bottomTrailing, content: {
-            imageView
-                .scaledToFill()
-                .ignoresSafeArea()
-                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-                .zIndex(0)
+        GeometryReader { proxy in
+            ZStack(alignment: .bottomTrailing, content: {
+                imageView
+                    .scaledToFill()
+                    .ignoresSafeArea()
+                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                    .zIndex(0)
+                    .onTapGesture(coordinateSpace: .global) { loc in
+                        changeImage(advance: loc.x > proxy.size.width / 2)
+                    }
 
-            DetailView(
-                model: model,
-                detailTapped: { openMaps() },
-                saveTapped: { saveImage(imageView) },
-                favoriteTapped: { markFavorite() }
-            )
-            .padding(.horizontal, 8)
-            .zIndex(1)
-        })
-        .overlay {
-            if saveSuccess {
-                ConfirmationView()
-                    .transition(.opacity.animation(.easeInOut))
+                DetailView(
+                    model: model,
+                    detailTapped: { openMaps() },
+                    saveTapped: { saveImage(imageView) },
+                    favoriteTapped: { markFavorite() }
+                )
+                .padding(.horizontal, 8)
+                .zIndex(1)
+            })
+            .overlay {
+                if saveSuccess {
+                    ConfirmationView()
+                        .transition(.opacity.animation(.easeInOut))
+                }
             }
         }
+    }
+
+    private func changeImage(advance: Bool) {
+        advance ? viewIndex.advance() : viewIndex.rewind()
     }
 
     private func openMaps() {
