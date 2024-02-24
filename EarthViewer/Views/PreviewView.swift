@@ -27,14 +27,5 @@ struct PreviewView: View {
 }
 
 #Preview {
-    let item = Item(
-        id: "",
-        image: "https://www.gstatic.com/prettyearth/assets/full/1010.jpg",
-        country: "Country Name",
-        region: "Really Super Duper Long",
-        map: "",
-        attribution: "",
-        faveData: FavoriteData(isFaved: true, timestamp: Date())
-    )
-    return PreviewView(model: item)
+    return PreviewView(model: Item.mock)
 }

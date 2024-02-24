@@ -55,17 +55,8 @@ struct DetailView: View {
 }
 
 #Preview {
-    let item = Item(
-        id: "",
-        image: "",
-        country: "Argentina",
-        region: "Volodarsky District, Astrakhan Oblast",
-        map: "",
-        attribution: "©2019 Aerodata International Surveys, Maxar Technologies, The GeoInformation Group | InterAtlas",
-        faveData: FavoriteData(isFaved: false, timestamp: Date())
-    )
     return DetailView(
-        model: item,
+        model: Item.mock,
         detailTapped: {},
         saveTapped: {},
         favoriteTapped: {}

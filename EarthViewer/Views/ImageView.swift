@@ -23,5 +23,5 @@ struct ImageView: View {
 }
 
 #Preview {
-    ImageView("https://www.gstatic.com/prettyearth/assets/full/1004.jpg")
+    ImageView(Item.mock.image)
 }

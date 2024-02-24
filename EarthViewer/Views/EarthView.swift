@@ -69,14 +69,5 @@ struct EarthView: View {
 }
 
 #Preview {
-    let item = Item(
-        id: "1004",
-        image: "https://www.gstatic.com/prettyearth/assets/full/1010.jpg",
-        country: "Country Name",
-        region: "Really Super Duper Long",
-        map: "https://www.google.com/maps/@-19.140249,-68.683995,14z/data=!3m1!1e3",
-        attribution: "©2019 CNES / Astrium, Cnes/Spot Image, Maxar Technologies",
-        faveData: FavoriteData(isFaved: false, timestamp: Date())
-    )
-    return EarthView(model: item)
+    return EarthView(model: Item.mock)
 }
