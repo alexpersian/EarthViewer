@@ -23,6 +23,7 @@
 		EA59BBBC2B718104003EC22C /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA59BBBB2B718104003EC22C /* ConfirmationView.swift */; };
 		EA9B420C2B8A6F3900801449 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9B420B2B8A6F3900801449 /* FavoritesView.swift */; };
 		EA9B420E2B8A720D00801449 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9B420D2B8A720D00801449 /* PreviewView.swift */; };
+		EAD638F12B8BB0270012D351 /* FavoriteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD638F02B8BB0270012D351 /* FavoriteData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		EA59BBBB2B718104003EC22C /* ConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
 		EA9B420B2B8A6F3900801449 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		EA9B420D2B8A720D00801449 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		EAD638F02B8BB0270012D351 /* FavoriteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			children = (
 				EA59BBA02B6FE753003EC22C /* Item.swift */,
 				EA040A992B8AB04100448687 /* ViewIndex.swift */,
+				EAD638F02B8BB0270012D351 /* FavoriteData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				EA199CB92B77FC4200754EF2 /* RemoteImageLoader.swift in Sources */,
 				EA59BBB62B714899003EC22C /* ImageView.swift in Sources */,
 				EA9B420E2B8A720D00801449 /* PreviewView.swift in Sources */,
+				EAD638F12B8BB0270012D351 /* FavoriteData.swift in Sources */,
 				EA59BBB82B7148A4003EC22C /* DetailView.swift in Sources */,
 				EA040A9A2B8AB04100448687 /* ViewIndex.swift in Sources */,
 				EA5845332B82E55400911B4E /* SessionManager.swift in Sources */,

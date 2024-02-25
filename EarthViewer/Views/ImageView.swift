@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ImageView: View {
-    @ObservedObject var remoteImageLoader: RemoteImageLoader
+    @ObservedObject private var remoteImageLoader: RemoteImageLoader
 
     init(_ imageURL: String) {
         guard let url = URL(string: imageURL) else {

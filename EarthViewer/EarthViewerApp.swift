@@ -10,8 +10,6 @@ import SwiftData
 
 @main
 struct EarthViewerApp: App {
-    @StateObject var viewIndex = ViewIndex()
-
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([Item.self])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
@@ -25,7 +23,6 @@ struct EarthViewerApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(viewIndex)
         }
         .modelContainer(for: Item.self) { result in
             do {

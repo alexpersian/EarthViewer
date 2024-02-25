@@ -9,7 +9,7 @@ import Foundation
 
 final class ViewIndex: ObservableObject {
      // Using a hard coded range here only because our data size is fixed.
-    static let range = 0..<2604
+    private static let range = 0..<2604
 
     // `index` is seeded randomly on app start.
     @Published var index: Int = .random(in: range)

@@ -15,15 +15,10 @@ struct PreviewView: View {
             ImageView(model.image)
                 .scaledToFill()
                 .cornerRadius(8)
-            Text(format(region: model.region, country: model.country))
+            Text(model.regionCountryString)
             Spacer()
         }
-    }
-
-    private func format(region: String, country: String) -> String {
-        return [region, country]
-            .filter { !$0.isEmpty }
-            .joined(separator: ", ")
+        .padding(.horizontal, 8)
     }
 }
 

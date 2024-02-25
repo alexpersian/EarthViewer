@@ -9,18 +9,18 @@ import SwiftUI
 import SwiftData
 
 struct EarthView: View {
-    @EnvironmentObject var viewIndex: ViewIndex
-    @State var saveSuccess: Bool = false
-    @State var showFavorites: Bool = false
+    @State private var saveSuccess: Bool = false
+    @State private var showFavorites: Bool = false
 
-    var model: Item
+    let model: Item
+    let requestViewChange: (ViewChangeRequest) -> Void
 
     var body: some View {
         let imageView = ImageView(model.image)
 
         NavigationStack {
             GeometryReader { proxy in
-                ZStack(alignment: .bottomTrailing, content: {
+                ZStack(alignment: .bottom, content: {
                     imageView
                         .scaledToFill()
                         .ignoresSafeArea()
@@ -48,15 +48,15 @@ struct EarthView: View {
                 }
                 .navigationDestination(
                     isPresented: $showFavorites,
-                    destination: { FavoritesView() }
+                    destination: { FavoritesView(tappedFavorite: loadFavorite) }
                 )
             }
         }
-        .tint(.black)
+        .tint(.primary)
     }
 
     private func changeImage(advance: Bool) {
-        advance ? viewIndex.advance() : viewIndex.rewind()
+        requestViewChange(advance ? .advance : .rewind)
     }
 
     private func openMaps() {
@@ -90,8 +90,15 @@ struct EarthView: View {
     private func showFavoritesList() {
         showFavorites = true
     }
+
+    private func loadFavorite(id: String) {
+        requestViewChange(.to(id: id))
+    }
 }
 
 #Preview {
-    return EarthView(model: Item.mock)
+    return EarthView(
+        model: Item.mock, 
+        requestViewChange: { _ in }
+    )
 }

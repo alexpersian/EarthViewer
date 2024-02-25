@@ -50,16 +50,14 @@ final class Item: Decodable, Identifiable {
     }
 }
 
-@Model
-final class FavoriteData {
-    /// Whether the Item is a favorite or not
-    let isFaved: Bool
-    /// Timestamp of when an Item was marked as favorite. Only relevant if `isFaved = true`.
-    let timestamp: Date
+// MARK: - Formatting
 
-    init(isFaved: Bool, timestamp: Date) {
-        self.isFaved = isFaved
-        self.timestamp = timestamp
+extension Item {
+    // Helper for formatting since region or country can be empty strings
+    var regionCountryString: String {
+        return [region, country]
+            .filter { !$0.isEmpty }
+            .joined(separator: ", ")
     }
 }
 

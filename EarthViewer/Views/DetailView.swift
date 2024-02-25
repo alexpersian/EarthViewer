@@ -1,23 +1,24 @@
 import SwiftUI
 
 struct DetailView: View {
-    var model: Item
-    var detailTapped: () -> Void
-    var saveTapped: () -> Void
-    var favoriteTapped: () -> Void
-    var openFavoritesTapped: () -> Void
+    let model: Item
 
-    @State var showingDialog: Bool = false
+    let detailTapped: () -> Void
+    let saveTapped: () -> Void
+    let favoriteTapped: () -> Void
+    let openFavoritesTapped: () -> Void
+
+    @State private var showingDialog: Bool = false
 
     var body: some View {
         HStack(spacing: 12, content: {
-            VStack(alignment: .trailing) {
-                Text(format(country: model.country, region: model.region))
+            VStack(alignment: .leading) {
+                Text(model.regionCountryString)
                     .lineLimit(1)
                     .font(.headline)
                     .fontDesign(.rounded)
                     .foregroundStyle(.white)
-                Text("Google Maps")
+                Text("See in Google Maps")
                     .font(.subheadline)
                     .fontDesign(.rounded)
                     .foregroundStyle(.white)
@@ -30,6 +31,8 @@ struct DetailView: View {
                     .foregroundStyle(.white)
                     .italic()
             }
+
+            Spacer()
 
             Image(systemName: "photo.badge.arrow.down")
                 .font(.title2)
@@ -53,13 +56,6 @@ struct DetailView: View {
         .padding(.top, 8)
         .background(Color.black.opacity(0.55))
         .cornerRadius(4)
-    }
-
-    // Helper function for formatting since country and region can be empty strings
-    private func format(country: String, region: String) -> String {
-        return [region, country]
-            .filter { !$0.isEmpty }
-            .joined(separator: ", ")
     }
 }
 
