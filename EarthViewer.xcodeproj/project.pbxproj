@@ -24,7 +24,44 @@
 		EA9B420C2B8A6F3900801449 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9B420B2B8A6F3900801449 /* FavoritesView.swift */; };
 		EA9B420E2B8A720D00801449 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9B420D2B8A720D00801449 /* PreviewView.swift */; };
 		EAD638F12B8BB0270012D351 /* FavoriteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD638F02B8BB0270012D351 /* FavoriteData.swift */; };
+		EAD638F92B8D60CF0012D351 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD638F82B8D60CF0012D351 /* WidgetKit.framework */; };
+		EAD638FB2B8D60D00012D351 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD638FA2B8D60D00012D351 /* SwiftUI.framework */; };
+		EAD638FE2B8D60D00012D351 /* EarthViewerWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD638FD2B8D60D00012D351 /* EarthViewerWidgetBundle.swift */; };
+		EAD639002B8D60D00012D351 /* EarthViewerWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD638FF2B8D60D00012D351 /* EarthViewerWidget.swift */; };
+		EAD639022B8D60D20012D351 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAD639012B8D60D20012D351 /* Assets.xcassets */; };
+		EAD639062B8D60D20012D351 /* EarthViewerWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = EAD638F62B8D60CF0012D351 /* EarthViewerWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		EAD6390D2B8E6A030012D351 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA59BBA02B6FE753003EC22C /* Item.swift */; };
+		EAD6390E2B8E6A0A0012D351 /* ViewIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA040A992B8AB04100448687 /* ViewIndex.swift */; };
+		EAD6390F2B8E6A0E0012D351 /* FavoriteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD638F02B8BB0270012D351 /* FavoriteData.swift */; };
+		EAD639122B8F95310012D351 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD639112B8F95310012D351 /* DataManager.swift */; };
+		EAD639132B8F9AA50012D351 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD639112B8F95310012D351 /* DataManager.swift */; };
+		EAD639142B8FA10C0012D351 /* RemoteImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA199CB82B77FC4200754EF2 /* RemoteImageLoader.swift */; };
+		EAD639152B8FA1170012D351 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5845322B82E55400911B4E /* SessionManager.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EAD639042B8D60D20012D351 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA59BB912B6FE753003EC22C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EAD638F52B8D60CF0012D351;
+			remoteInfo = EarthViewerWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EAD6390A2B8D60D20012D351 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				EAD639062B8D60D20012D351 /* EarthViewerWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		EA040A992B8AB04100448687 /* ViewIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewIndex.swift; sourceTree = "<group>"; };
@@ -46,6 +83,15 @@
 		EA9B420B2B8A6F3900801449 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		EA9B420D2B8A720D00801449 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		EAD638F02B8BB0270012D351 /* FavoriteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteData.swift; sourceTree = "<group>"; };
+		EAD638F62B8D60CF0012D351 /* EarthViewerWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EarthViewerWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAD638F82B8D60CF0012D351 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		EAD638FA2B8D60D00012D351 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		EAD638FD2B8D60D00012D351 /* EarthViewerWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthViewerWidgetBundle.swift; sourceTree = "<group>"; };
+		EAD638FF2B8D60D00012D351 /* EarthViewerWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthViewerWidget.swift; sourceTree = "<group>"; };
+		EAD639012B8D60D20012D351 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EAD639032B8D60D20012D351 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAD639102B8F933D0012D351 /* EarthViewerWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EarthViewerWidgetExtension.entitlements; sourceTree = "<group>"; };
+		EAD639112B8F95310012D351 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +99,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAD638F32B8D60CF0012D351 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAD638FB2B8D60D00012D351 /* SwiftUI.framework in Frameworks */,
+				EAD638F92B8D60CF0012D351 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +151,7 @@
 			children = (
 				EA199CB82B77FC4200754EF2 /* RemoteImageLoader.swift */,
 				EA5845322B82E55400911B4E /* SessionManager.swift */,
+				EAD639112B8F95310012D351 /* DataManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -104,6 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				EA59BB9B2B6FE753003EC22C /* EarthViewer */,
+				EAD638FC2B8D60D00012D351 /* EarthViewerWidget */,
+				EAD638F72B8D60CF0012D351 /* Frameworks */,
 				EA59BB9A2B6FE753003EC22C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -112,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				EA59BB992B6FE753003EC22C /* EarthViewer.app */,
+				EAD638F62B8D60CF0012D351 /* EarthViewerWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,6 +199,27 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		EAD638F72B8D60CF0012D351 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EAD638F82B8D60CF0012D351 /* WidgetKit.framework */,
+				EAD638FA2B8D60D00012D351 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EAD638FC2B8D60D00012D351 /* EarthViewerWidget */ = {
+			isa = PBXGroup;
+			children = (
+				EAD639102B8F933D0012D351 /* EarthViewerWidgetExtension.entitlements */,
+				EAD638FD2B8D60D00012D351 /* EarthViewerWidgetBundle.swift */,
+				EAD638FF2B8D60D00012D351 /* EarthViewerWidget.swift */,
+				EAD639012B8D60D20012D351 /* Assets.xcassets */,
+				EAD639032B8D60D20012D351 /* Info.plist */,
+			);
+			path = EarthViewerWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -150,15 +230,34 @@
 				EA59BB952B6FE753003EC22C /* Sources */,
 				EA59BB962B6FE753003EC22C /* Frameworks */,
 				EA59BB972B6FE753003EC22C /* Resources */,
+				EAD6390A2B8D60D20012D351 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				EAD639052B8D60D20012D351 /* PBXTargetDependency */,
 			);
 			name = EarthViewer;
 			productName = EarthViewer;
 			productReference = EA59BB992B6FE753003EC22C /* EarthViewer.app */;
 			productType = "com.apple.product-type.application";
+		};
+		EAD638F52B8D60CF0012D351 /* EarthViewerWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EAD639072B8D60D20012D351 /* Build configuration list for PBXNativeTarget "EarthViewerWidgetExtension" */;
+			buildPhases = (
+				EAD638F22B8D60CF0012D351 /* Sources */,
+				EAD638F32B8D60CF0012D351 /* Frameworks */,
+				EAD638F42B8D60CF0012D351 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EarthViewerWidgetExtension;
+			productName = EarthViewerWidgetExtension;
+			productReference = EAD638F62B8D60CF0012D351 /* EarthViewerWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -171,6 +270,9 @@
 				LastUpgradeCheck = 1510;
 				TargetAttributes = {
 					EA59BB982B6FE753003EC22C = {
+						CreatedOnToolsVersion = 15.1;
+					};
+					EAD638F52B8D60CF0012D351 = {
 						CreatedOnToolsVersion = 15.1;
 					};
 				};
@@ -189,6 +291,7 @@
 			projectRoot = "";
 			targets = (
 				EA59BB982B6FE753003EC22C /* EarthViewer */,
+				EAD638F52B8D60CF0012D351 /* EarthViewerWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -205,6 +308,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EAD638F42B8D60CF0012D351 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAD639022B8D60D20012D351 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -215,6 +326,7 @@
 				EA9B420C2B8A6F3900801449 /* FavoritesView.swift in Sources */,
 				EA199CB92B77FC4200754EF2 /* RemoteImageLoader.swift in Sources */,
 				EA59BBB62B714899003EC22C /* ImageView.swift in Sources */,
+				EAD639122B8F95310012D351 /* DataManager.swift in Sources */,
 				EA9B420E2B8A720D00801449 /* PreviewView.swift in Sources */,
 				EAD638F12B8BB0270012D351 /* FavoriteData.swift in Sources */,
 				EA59BBB82B7148A4003EC22C /* DetailView.swift in Sources */,
@@ -228,7 +340,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EAD638F22B8D60CF0012D351 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAD6390F2B8E6A0E0012D351 /* FavoriteData.swift in Sources */,
+				EAD639132B8F9AA50012D351 /* DataManager.swift in Sources */,
+				EAD639002B8D60D00012D351 /* EarthViewerWidget.swift in Sources */,
+				EAD6390E2B8E6A0A0012D351 /* ViewIndex.swift in Sources */,
+				EAD6390D2B8E6A030012D351 /* Item.swift in Sources */,
+				EAD639142B8FA10C0012D351 /* RemoteImageLoader.swift in Sources */,
+				EAD639152B8FA1170012D351 /* SessionManager.swift in Sources */,
+				EAD638FE2B8D60D00012D351 /* EarthViewerWidgetBundle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EAD639052B8D60D20012D351 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EAD638F52B8D60CF0012D351 /* EarthViewerWidgetExtension */;
+			targetProxy = EAD639042B8D60D20012D351 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		EA59BBA82B6FE756003EC22C /* Debug */ = {
@@ -348,6 +483,7 @@
 		EA59BBAB2B6FE756003EC22C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = EarthViewer/EarthViewer.entitlements;
@@ -388,6 +524,7 @@
 		EA59BBAC2B6FE756003EC22C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = EarthViewer/EarthViewer.entitlements;
@@ -425,6 +562,67 @@
 			};
 			name = Release;
 		};
+		EAD639082B8D60D20012D351 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = EarthViewerWidget/EarthViewerWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 67BLBCQE27;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EarthViewerWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = EarthViewerWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexpersian.EarthViewer.EarthViewerWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EAD639092B8D60D20012D351 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = EarthViewerWidget/EarthViewerWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 67BLBCQE27;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EarthViewerWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = EarthViewerWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexpersian.EarthViewer.EarthViewerWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -442,6 +640,15 @@
 			buildConfigurations = (
 				EA59BBAB2B6FE756003EC22C /* Debug */,
 				EA59BBAC2B6FE756003EC22C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EAD639072B8D60D20012D351 /* Build configuration list for PBXNativeTarget "EarthViewerWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAD639082B8D60D20012D351 /* Debug */,
+				EAD639092B8D60D20012D351 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
