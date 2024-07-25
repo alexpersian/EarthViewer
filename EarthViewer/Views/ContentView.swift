@@ -19,6 +19,16 @@ struct ContentView: View {
         )
         .statusBarHidden()
         .persistentSystemOverlays(.hidden)
+        .onOpenURL(perform: { url in
+            guard
+                let id = url.absoluteString.split(separator: "/").last,
+                let index = views.firstIndex(where: { $0.id == String(id) })
+            else {
+                print("Invalid index passed.")
+                return
+            }
+            viewIndex.index = index
+        })
     }
 
     private func handle(request: ViewChangeRequest) {

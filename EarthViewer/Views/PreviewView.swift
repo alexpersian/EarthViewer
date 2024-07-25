@@ -12,7 +12,7 @@ struct PreviewView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            ImageView(model.image)
+            ImageView(model.image, isThumbnail: true)
                 .scaledToFill()
                 .cornerRadius(8)
             Text(model.regionCountryString)

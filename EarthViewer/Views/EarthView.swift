@@ -16,7 +16,7 @@ struct EarthView: View {
     let requestViewChange: (ViewChangeRequest) -> Void
 
     var body: some View {
-        let imageView = ImageView(model.image)
+        let imageView = ImageView(model.image, isThumbnail: false)
 
         NavigationStack {
             GeometryReader { proxy in

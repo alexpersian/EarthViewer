@@ -26,4 +26,12 @@ final class SessionManager {
     ) -> URLSessionDataTask {
         session.dataTask(with: url, completionHandler: completionHandler)
     }
+
+    func dataTask(with url: URL) async -> Data? {
+        if let (data, _) = try? await session.data(from: url) {
+            return data
+        } else {
+            return nil
+        }
+    }
 }
