@@ -11,12 +11,20 @@ import SwiftData
 struct EarthView: View {
     @State private var saveSuccess: Bool = false
     @State private var showFavorites: Bool = false
+    @State private var showDetails: Bool = true
 
     let model: Item
     let requestViewChange: (ViewChangeRequest) -> Void
 
     var body: some View {
         let imageView = ImageView(model.image, isThumbnail: false)
+        let detailView = DetailView(
+            model: model,
+            openMapsLinkTapped: { openMaps() },
+            saveTapped: { saveImage(imageView) },
+            favoriteTapped: { markFavorite() },
+            openFavoritesTapped: { showFavoritesList() }
+        )
 
         NavigationStack {
             GeometryReader { proxy in
@@ -29,16 +37,16 @@ struct EarthView: View {
                         .onTapGesture(coordinateSpace: .global) { loc in
                             changeImage(advance: loc.x > proxy.size.width / 2)
                         }
+                        .onLongPressGesture {
+                            showDetails.toggle()
+                        }
 
-                    DetailView(
-                        model: model,
-                        openMapsLinkTapped: { openMaps() },
-                        saveTapped: { saveImage(imageView) },
-                        favoriteTapped: { markFavorite() },
-                        openFavoritesTapped: { showFavoritesList() }
-                    )
-                    .padding(.horizontal, 8)
-                    .zIndex(1)
+                    if showDetails {
+                        detailView
+                            .padding(.horizontal, 8)
+                            .zIndex(1)
+                            .transition(.opacity.animation(.easeInOut))
+                    }
                 })
                 .overlay {
                     if saveSuccess {
@@ -98,7 +106,7 @@ struct EarthView: View {
 
 #Preview {
     return EarthView(
-        model: Item.mock, 
+        model: Item.mock,
         requestViewChange: { _ in }
     )
 }
