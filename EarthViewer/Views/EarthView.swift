@@ -32,7 +32,7 @@ struct EarthView: View {
 
                     DetailView(
                         model: model,
-                        detailTapped: { openMaps() },
+                        openMapsLinkTapped: { openMaps() },
                         saveTapped: { saveImage(imageView) },
                         favoriteTapped: { markFavorite() },
                         openFavoritesTapped: { showFavoritesList() }

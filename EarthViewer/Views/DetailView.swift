@@ -3,7 +3,7 @@ import SwiftUI
 struct DetailView: View {
     let model: Item
 
-    let detailTapped: () -> Void
+    let openMapsLinkTapped: () -> Void
     let saveTapped: () -> Void
     let favoriteTapped: () -> Void
     let openFavoritesTapped: () -> Void
@@ -24,7 +24,7 @@ struct DetailView: View {
                     .foregroundStyle(.white)
                     .underline()
                     .padding(.bottom, 2)
-                    .onTapGesture { detailTapped() }
+                    .onTapGesture { openMapsLinkTapped() }
                 Text(model.attribution)
                     .lineLimit(1)
                     .font(.caption2)
@@ -62,7 +62,7 @@ struct DetailView: View {
 #Preview {
     return DetailView(
         model: Item.mock,
-        detailTapped: {},
+        openMapsLinkTapped: {},
         saveTapped: {},
         favoriteTapped: {},
         openFavoritesTapped: {}
