@@ -10,7 +10,7 @@ import SwiftData
 
 @Model
 final class Item: Decodable, Identifiable {
-    let id: String
+    @Attribute(.unique) let id: String
     let image: String
     let country: String
     let region: String
