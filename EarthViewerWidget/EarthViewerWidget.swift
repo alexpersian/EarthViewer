@@ -14,17 +14,17 @@ struct Provider: TimelineProvider {
     private let remoteImageLoader = RemoteImageLoader()
 
     // This is what's shown when the widget doesn't have data
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), image: UIImage(systemName: "hourglass")!.withTintColor(.secondarySystemBackground), url: nil)
+    func placeholder(in context: Context) -> EarthViewEntry {
+        EarthViewEntry(date: Date(), image: UIImage(imageLiteralResourceName: "earthview-placeholder"), url: nil)
     }
 
     // This is what gets displayed within the widget gallery
-    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), image: UIImage(systemName: "globe.americas.fill")!.withTintColor(.secondarySystemBackground), url: nil)
+    func getSnapshot(in context: Context, completion: @escaping (EarthViewEntry) -> ()) {
+        let entry = EarthViewEntry(date: Date(), image: UIImage(imageLiteralResourceName: "earthview-placeholder"), url: nil)
         completion(entry)
     }
 
-    // This is what provides the data for the widget to something
+    // This is what provides the data for the widget
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         Task {
             guard
@@ -39,19 +39,16 @@ struct Provider: TimelineProvider {
 
             let entryURL = URL(string: "com.alexpersian.EarthView/\(earthView.id)")
 
-            let entry = SimpleEntry(date: Date(), image: image, url: entryURL)
-            let refreshDate = Calendar.current.date(
-                byAdding: .hour,
-                value: 6,
-                to: .now
-            )!
+            let entry = EarthViewEntry(date: Date(), image: image, url: entryURL)
+            // Update every 8 hours. This should allow for a "fresh" feel without updating too often
+            let refreshDate = Calendar.current.date(byAdding: .hour, value: 8, to: .now)!
             let timeline = Timeline(entries: [entry], policy: .after(refreshDate))
             completion(timeline)
         }
     }
 }
 
-struct SimpleEntry: TimelineEntry {
+struct EarthViewEntry: TimelineEntry {
     let date: Date
     let image: UIImage
     let url: URL?
@@ -65,7 +62,7 @@ struct EarthViewerWidgetEntryView : View {
             .resizable()
             .scaledToFill()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .containerBackground(for: .widget, content: { Color.primary})
+            .containerBackground(for: .widget, content: { Color.primary })
             .widgetURL(entry.url)
     }
 }
@@ -78,8 +75,8 @@ struct EarthViewerWidget: Widget {
             EarthViewerWidgetEntryView(entry: entry)
                 .modelContainer(for: Item.self)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("Earth View Highlight")
+        .description("Displays a cycling Earth view picture.")
         .contentMarginsDisabled()
     }
 }
@@ -87,7 +84,6 @@ struct EarthViewerWidget: Widget {
 #Preview(as: .systemSmall) {
     EarthViewerWidget()
 } timeline: {
-    let data = try! Data(contentsOf: URL(string: "https://www.gstatic.com/prettyearth/assets/full/14793.jpg")!)
-    let image = UIImage(data: data)
-    SimpleEntry(date: Date(), image: image!, url: nil)
+    let image = UIImage(imageLiteralResourceName: "earthview-placeholder")
+    EarthViewEntry(date: Date(), image: image, url: nil)
 }
