@@ -5,13 +5,19 @@
   },
   "layers" : [
     {
-      "filename" : "Front.imagestacklayer"
+      "filename" : "earthview-placeholder-hires-ai.imagestacklayer"
     },
     {
-      "filename" : "Middle.imagestacklayer"
+      "filename" : "tvos_appstoreicon_middle.imagestacklayer"
     },
     {
-      "filename" : "Back.imagestacklayer"
+      "filename" : "tvos_appstoreicon_back.imagestacklayer"
     }
-  ]
+  ],
+  "properties" : {
+    "canvasSize" : {
+      "height" : 240,
+      "width" : 400
+    }
+  }
 }
