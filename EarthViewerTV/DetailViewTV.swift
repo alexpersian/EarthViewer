@@ -36,4 +36,3 @@ struct DetailViewTV: View {
         model: Item.mock
     )
 }
-

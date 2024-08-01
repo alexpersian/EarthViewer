@@ -9,9 +9,14 @@ import SwiftUI
 
 struct EarthViewTV: View {
     @State private var showDetails: Bool = true
+    @State private var startDate: Date = .now
+    @State private var elapsedTime: TimeInterval = 0
 
     let model: Item
     let requestViewChange: (ViewChangeRequest) -> Void
+
+    private let viewChangeTimer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    private let viewChangeInterval: TimeInterval = 60
 
     var body: some View {
         let imageView = ImageView(model.image, isThumbnail: false)
@@ -33,9 +38,9 @@ struct EarthViewTV: View {
         .onMoveCommand(perform: { direction in
             switch direction {
             case .left:
-                requestViewChange(.rewind)
+                changeView(.rewind)
             case .right:
-                requestViewChange(.advance)
+                changeView(.advance)
             case .up:
                 showDetails = true
             case .down:
@@ -44,6 +49,22 @@ struct EarthViewTV: View {
                 return
             }
         })
+        .onReceive(viewChangeTimer) { fireDate in
+            elapsedTime = fireDate.timeIntervalSince(startDate)
+            if elapsedTime > viewChangeInterval {
+                changeView(.random)
+            }
+        }
+    }
+
+    private func changeView(_ request: ViewChangeRequest) {
+        requestViewChange(request)
+        resetViewChangeCountdown()
+    }
+
+    private func resetViewChangeCountdown() {
+        startDate = .now
+        elapsedTime = 0
     }
 }
 

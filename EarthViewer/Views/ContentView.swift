@@ -41,6 +41,9 @@ struct ContentView: View {
             if let index = views.firstIndex(where: { $0.id == id }) {
                 viewIndex.index = index
             }
+        case .random:
+            // Unimplemented
+            return
         }
     }
 }

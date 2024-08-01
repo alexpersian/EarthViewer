@@ -25,8 +25,10 @@ struct ContentViewTV: View {
             viewIndex.advance()
         case .rewind:
             viewIndex.rewind()
+        case .random:
+            viewIndex.random()
         case .to:
-            // Not implemented on tvOS
+            // Unimplemented
             return
         }
     }

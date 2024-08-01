@@ -25,10 +25,15 @@ final class ViewIndex: ObservableObject {
         ? index - 1
         : Self.range.upperBound - 1
     }
+
+    func random() {
+        index = .random(in: Self.range)
+    }
 }
 
 enum ViewChangeRequest {
     case advance
     case rewind
     case to(id: String)
+    case random
 }
