@@ -26,3 +26,9 @@ final class ViewIndex: ObservableObject {
         : Self.range.upperBound - 1
     }
 }
+
+enum ViewChangeRequest {
+    case advance
+    case rewind
+    case to(id: String)
+}

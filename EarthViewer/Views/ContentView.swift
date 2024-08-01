@@ -44,9 +44,3 @@ struct ContentView: View {
         }
     }
 }
-
-enum ViewChangeRequest {
-    case advance
-    case rewind
-    case to(id: String)
-}
