@@ -16,6 +16,7 @@ Resource list provided by: https://github.com/alexpersian/earthview
 * The Apple TV app can be controlled via the remote.
 	* Right and Left buttons control next / previous images.
 	* Up and Down buttons control visibility of Details overlay.
+	* Every minute the view will change if left alone.
 
 ### Preview
 ![preview](earthviewer_preview.png)
