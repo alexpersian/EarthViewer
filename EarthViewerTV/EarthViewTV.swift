@@ -16,7 +16,7 @@ struct EarthViewTV: View {
     let requestViewChange: (ViewChangeRequest) -> Void
 
     private let viewChangeTimer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    private let viewChangeInterval: TimeInterval = 60
+    private let viewChangeInterval: TimeInterval = 30
 
     var body: some View {
         let imageView = ImageView(model.image, isThumbnail: false)
