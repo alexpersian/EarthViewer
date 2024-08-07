@@ -36,6 +36,7 @@
 		EAAA44342C5BF6D4008477C9 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA59BBB52B714899003EC22C /* ImageView.swift */; };
 		EAAA44352C5BF732008477C9 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5845322B82E55400911B4E /* SessionManager.swift */; };
 		EAAA44372C5BF896008477C9 /* DetailViewTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAA44362C5BF896008477C9 /* DetailViewTV.swift */; };
+		EAB0F1FD2C63B99D004B5986 /* EarthViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB0F1FC2C63B99D004B5986 /* EarthViewerTests.swift */; };
 		EAD638F12B8BB0270012D351 /* FavoriteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD638F02B8BB0270012D351 /* FavoriteData.swift */; };
 		EAD638F92B8D60CF0012D351 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD638F82B8D60CF0012D351 /* WidgetKit.framework */; };
 		EAD638FB2B8D60D00012D351 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD638FA2B8D60D00012D351 /* SwiftUI.framework */; };
@@ -53,6 +54,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		EAB0F1FE2C63B99D004B5986 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA59BB912B6FE753003EC22C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EA59BB982B6FE753003EC22C;
+			remoteInfo = EarthViewer;
+		};
 		EAD639042B8D60D20012D351 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EA59BB912B6FE753003EC22C /* Project object */;
@@ -102,6 +110,8 @@
 		EAAA44282C5BE40C008477C9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EAAA44312C5BF645008477C9 /* EarthViewTV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthViewTV.swift; sourceTree = "<group>"; };
 		EAAA44362C5BF896008477C9 /* DetailViewTV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewTV.swift; sourceTree = "<group>"; };
+		EAB0F1FA2C63B99D004B5986 /* EarthViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EarthViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAB0F1FC2C63B99D004B5986 /* EarthViewerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthViewerTests.swift; sourceTree = "<group>"; };
 		EAD638F02B8BB0270012D351 /* FavoriteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteData.swift; sourceTree = "<group>"; };
 		EAD638F62B8D60CF0012D351 /* EarthViewerWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EarthViewerWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAD638F82B8D60CF0012D351 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -123,6 +133,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		EAAA441A2C5BE409008477C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAB0F1F72C63B99D004B5986 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -189,6 +206,7 @@
 				EA59BB9B2B6FE753003EC22C /* EarthViewer */,
 				EAD638FC2B8D60D00012D351 /* EarthViewerWidget */,
 				EAAA441E2C5BE409008477C9 /* EarthViewerTV */,
+				EAB0F1FB2C63B99D004B5986 /* EarthViewerTests */,
 				EAD638F72B8D60CF0012D351 /* Frameworks */,
 				EA59BB9A2B6FE753003EC22C /* Products */,
 			);
@@ -200,6 +218,7 @@
 				EA59BB992B6FE753003EC22C /* EarthViewer.app */,
 				EAD638F62B8D60CF0012D351 /* EarthViewerWidgetExtension.appex */,
 				EAAA441D2C5BE409008477C9 /* EarthViewerTV.app */,
+				EAB0F1FA2C63B99D004B5986 /* EarthViewerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -247,6 +266,14 @@
 				EAAA44282C5BE40C008477C9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EAB0F1FB2C63B99D004B5986 /* EarthViewerTests */ = {
+			isa = PBXGroup;
+			children = (
+				EAB0F1FC2C63B99D004B5986 /* EarthViewerTests.swift */,
+			);
+			path = EarthViewerTests;
 			sourceTree = "<group>";
 		};
 		EAD638F72B8D60CF0012D351 /* Frameworks */ = {
@@ -309,6 +336,24 @@
 			productReference = EAAA441D2C5BE409008477C9 /* EarthViewerTV.app */;
 			productType = "com.apple.product-type.application";
 		};
+		EAB0F1F92C63B99D004B5986 /* EarthViewerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EAB0F2022C63B99D004B5986 /* Build configuration list for PBXNativeTarget "EarthViewerTests" */;
+			buildPhases = (
+				EAB0F1F62C63B99D004B5986 /* Sources */,
+				EAB0F1F72C63B99D004B5986 /* Frameworks */,
+				EAB0F1F82C63B99D004B5986 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EAB0F1FF2C63B99D004B5986 /* PBXTargetDependency */,
+			);
+			name = EarthViewerTests;
+			productName = EarthViewerTests;
+			productReference = EAB0F1FA2C63B99D004B5986 /* EarthViewerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		EAD638F52B8D60CF0012D351 /* EarthViewerWidgetExtension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EAD639072B8D60D20012D351 /* Build configuration list for PBXNativeTarget "EarthViewerWidgetExtension" */;
@@ -342,6 +387,10 @@
 					EAAA441C2C5BE409008477C9 = {
 						CreatedOnToolsVersion = 15.1;
 					};
+					EAB0F1F92C63B99D004B5986 = {
+						CreatedOnToolsVersion = 15.1;
+						TestTargetID = EA59BB982B6FE753003EC22C;
+					};
 					EAD638F52B8D60CF0012D351 = {
 						CreatedOnToolsVersion = 15.1;
 					};
@@ -361,6 +410,7 @@
 			projectRoot = "";
 			targets = (
 				EA59BB982B6FE753003EC22C /* EarthViewer */,
+				EAB0F1F92C63B99D004B5986 /* EarthViewerTests */,
 				EAD638F52B8D60CF0012D351 /* EarthViewerWidgetExtension */,
 				EAAA441C2C5BE409008477C9 /* EarthViewerTV */,
 			);
@@ -386,6 +436,13 @@
 				EAAA44292C5BE40C008477C9 /* Preview Assets.xcassets in Resources */,
 				EAAA44262C5BE40C008477C9 /* Assets.xcassets in Resources */,
 				EAAA44302C5BF491008477C9 /* earthviews.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAB0F1F82C63B99D004B5986 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +495,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EAB0F1F62C63B99D004B5986 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAB0F1FD2C63B99D004B5986 /* EarthViewerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EAD638F22B8D60CF0012D351 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -456,6 +521,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		EAB0F1FF2C63B99D004B5986 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EA59BB982B6FE753003EC22C /* EarthViewer */;
+			targetProxy = EAB0F1FE2C63B99D004B5986 /* PBXContainerItemProxy */;
+		};
 		EAD639052B8D60D20012D351 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = EAD638F52B8D60CF0012D351 /* EarthViewerWidgetExtension */;
@@ -735,6 +805,55 @@
 			};
 			name = Release;
 		};
+		EAB0F2002C63B99D004B5986 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexpersian.EarthViewerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EarthViewer.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EarthViewer";
+			};
+			name = Debug;
+		};
+		EAB0F2012C63B99D004B5986 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexpersian.EarthViewerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EarthViewer.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EarthViewer";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		EAD639082B8D60D20012D351 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -832,6 +951,15 @@
 			buildConfigurations = (
 				EAAA442B2C5BE40C008477C9 /* Debug */,
 				EAAA442C2C5BE40C008477C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EAB0F2022C63B99D004B5986 /* Build configuration list for PBXNativeTarget "EarthViewerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAB0F2002C63B99D004B5986 /* Debug */,
+				EAB0F2012C63B99D004B5986 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
