@@ -9,7 +9,9 @@ import Foundation
 
 final class ViewIndex: ObservableObject {
      // Using a hard coded range here only because our data size is fixed.
-    private static let range = 0..<2604
+    private static let minRange = 0
+    private static let maxRange = 2604
+    private static let range = minRange..<maxRange
 
     // `index` is seeded randomly on app start.
     @Published var index: Int = .random(in: range)
@@ -29,11 +31,4 @@ final class ViewIndex: ObservableObject {
     func random() {
         index = .random(in: Self.range)
     }
-}
-
-enum ViewChangeRequest {
-    case advance
-    case rewind
-    case to(id: String)
-    case random
 }

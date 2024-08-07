@@ -37,6 +37,8 @@
 		EAAA44352C5BF732008477C9 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5845322B82E55400911B4E /* SessionManager.swift */; };
 		EAAA44372C5BF896008477C9 /* DetailViewTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAA44362C5BF896008477C9 /* DetailViewTV.swift */; };
 		EAB0F1FD2C63B99D004B5986 /* EarthViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB0F1FC2C63B99D004B5986 /* EarthViewerTests.swift */; };
+		EAB0F2042C63BA88004B5986 /* ViewChangeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB0F2032C63BA88004B5986 /* ViewChangeRequest.swift */; };
+		EAB0F2052C63BA88004B5986 /* ViewChangeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB0F2032C63BA88004B5986 /* ViewChangeRequest.swift */; };
 		EAD638F12B8BB0270012D351 /* FavoriteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD638F02B8BB0270012D351 /* FavoriteData.swift */; };
 		EAD638F92B8D60CF0012D351 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD638F82B8D60CF0012D351 /* WidgetKit.framework */; };
 		EAD638FB2B8D60D00012D351 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD638FA2B8D60D00012D351 /* SwiftUI.framework */; };
@@ -45,7 +47,6 @@
 		EAD639022B8D60D20012D351 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAD639012B8D60D20012D351 /* Assets.xcassets */; };
 		EAD639062B8D60D20012D351 /* EarthViewerWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = EAD638F62B8D60CF0012D351 /* EarthViewerWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		EAD6390D2B8E6A030012D351 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA59BBA02B6FE753003EC22C /* Item.swift */; };
-		EAD6390E2B8E6A0A0012D351 /* ViewIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA040A992B8AB04100448687 /* ViewIndex.swift */; };
 		EAD6390F2B8E6A0E0012D351 /* FavoriteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD638F02B8BB0270012D351 /* FavoriteData.swift */; };
 		EAD639122B8F95310012D351 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD639112B8F95310012D351 /* DataManager.swift */; };
 		EAD639132B8F9AA50012D351 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD639112B8F95310012D351 /* DataManager.swift */; };
@@ -112,6 +113,7 @@
 		EAAA44362C5BF896008477C9 /* DetailViewTV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewTV.swift; sourceTree = "<group>"; };
 		EAB0F1FA2C63B99D004B5986 /* EarthViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EarthViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAB0F1FC2C63B99D004B5986 /* EarthViewerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthViewerTests.swift; sourceTree = "<group>"; };
+		EAB0F2032C63BA88004B5986 /* ViewChangeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewChangeRequest.swift; sourceTree = "<group>"; };
 		EAD638F02B8BB0270012D351 /* FavoriteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteData.swift; sourceTree = "<group>"; };
 		EAD638F62B8D60CF0012D351 /* EarthViewerWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EarthViewerWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAD638F82B8D60CF0012D351 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -178,6 +180,7 @@
 				EA59BBA02B6FE753003EC22C /* Item.swift */,
 				EA040A992B8AB04100448687 /* ViewIndex.swift */,
 				EAD638F02B8BB0270012D351 /* FavoriteData.swift */,
+				EAB0F2032C63BA88004B5986 /* ViewChangeRequest.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				EA59BBB82B7148A4003EC22C /* DetailView.swift in Sources */,
 				EA040A9A2B8AB04100448687 /* ViewIndex.swift in Sources */,
 				EA5845332B82E55400911B4E /* SessionManager.swift in Sources */,
+				EAB0F2042C63BA88004B5986 /* ViewChangeRequest.swift in Sources */,
 				EA59BBBC2B718104003EC22C /* ConfirmationView.swift in Sources */,
 				EA59BB9F2B6FE753003EC22C /* ContentView.swift in Sources */,
 				EA59BBB22B7000C7003EC22C /* EarthView.swift in Sources */,
@@ -485,6 +489,7 @@
 				EAAA44342C5BF6D4008477C9 /* ImageView.swift in Sources */,
 				EAAA442E2C5BF44C008477C9 /* FavoriteData.swift in Sources */,
 				EAAA44352C5BF732008477C9 /* SessionManager.swift in Sources */,
+				EAB0F2052C63BA88004B5986 /* ViewChangeRequest.swift in Sources */,
 				EAAA44372C5BF896008477C9 /* DetailViewTV.swift in Sources */,
 				EAAA442D2C5BF438008477C9 /* Item.swift in Sources */,
 				EAAA44222C5BE409008477C9 /* ContentViewTV.swift in Sources */,
@@ -510,7 +515,6 @@
 				EAD6390F2B8E6A0E0012D351 /* FavoriteData.swift in Sources */,
 				EAD639132B8F9AA50012D351 /* DataManager.swift in Sources */,
 				EAD639002B8D60D00012D351 /* EarthViewerWidget.swift in Sources */,
-				EAD6390E2B8E6A0A0012D351 /* ViewIndex.swift in Sources */,
 				EAD6390D2B8E6A030012D351 /* Item.swift in Sources */,
 				EAD639142B8FA10C0012D351 /* RemoteImageLoader.swift in Sources */,
 				EAD639152B8FA1170012D351 /* SessionManager.swift in Sources */,
