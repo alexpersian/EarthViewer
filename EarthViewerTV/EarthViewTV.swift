@@ -34,6 +34,7 @@ struct EarthViewTV: View {
                     .transition(.opacity.animation(.easeInOut))
             }
         })
+        .background(.black)
         .focusable()
         .onMoveCommand(perform: { direction in
             switch direction {

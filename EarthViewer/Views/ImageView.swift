@@ -14,25 +14,18 @@ struct ImageView: View {
     }
 
     var body: some View {
-        if isThumbnail {
-            if let image = remoteImageLoader.thumbnailImage {
-                Image(uiImage: image)
-                    .resizable()
-                    .transition(.opacity.animation(.default))
-            } else {
-                ProgressView()
-                    .transition(.opacity.animation(.default))
-            }
-        }
-        else {
-            if let image = remoteImageLoader.image {
-                Image(uiImage: image)
-                    .resizable()
-                    .transition(.opacity.animation(.default))
-            } else {
-                ProgressView()
-                    .transition(.opacity.animation(.default))
-            }
+        let image = isThumbnail
+        ? remoteImageLoader.thumbnailImage
+        : remoteImageLoader.image
+
+        if let image = image {
+            Image(uiImage: image)
+                .resizable()
+                .transition(.opacity.animation(.default))
+        } else {
+            ProgressView()
+                .colorInvert()
+                .transition(.opacity.animation(.default))
         }
     }
 }

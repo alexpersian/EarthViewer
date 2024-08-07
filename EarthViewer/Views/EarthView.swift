@@ -33,7 +33,6 @@ struct EarthView: View {
                         .scaledToFill()
                         .ignoresSafeArea()
                         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-                        .zIndex(0)
                         .onTapGesture(coordinateSpace: .global) { loc in
                             changeImage(advance: loc.x > proxy.size.width / 2)
                         }
@@ -48,6 +47,7 @@ struct EarthView: View {
                             .transition(.opacity.animation(.easeInOut))
                     }
                 })
+                .background(.black)
                 .overlay {
                     if saveSuccess {
                         ConfirmationView()
@@ -60,7 +60,6 @@ struct EarthView: View {
                 )
             }
         }
-        .tint(.primary)
     }
 
     private func changeImage(advance: Bool) {
