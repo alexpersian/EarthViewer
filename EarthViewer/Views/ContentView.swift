@@ -20,14 +20,11 @@ struct ContentView: View {
         .statusBarHidden()
         .persistentSystemOverlays(.hidden)
         .onOpenURL(perform: { url in
-            guard
-                let id = url.absoluteString.split(separator: "/").last,
-                let index = views.firstIndex(where: { $0.id == String(id) })
-            else {
-                print("Invalid index passed.")
+            guard let id = url.absoluteString.split(separator: "/").last else {
+                print("Unable to parse id from url.")
                 return
             }
-            viewIndex.index = index
+            handle(request: .to(id: "\(id)"))
         })
     }
 
@@ -38,8 +35,8 @@ struct ContentView: View {
         case .rewind:
             viewIndex.rewind()
         case .to(let id):
-            if let index = views.firstIndex(where: { $0.id == id }) {
-                viewIndex.index = index
+            if let newIndex = views.firstIndex(where: { $0.id == id }) {
+                try? viewIndex.setIndex(to: newIndex)
             }
         case .random:
             // Unimplemented
