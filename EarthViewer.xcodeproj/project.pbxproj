@@ -36,7 +36,6 @@
 		EAAA44342C5BF6D4008477C9 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA59BBB52B714899003EC22C /* ImageView.swift */; };
 		EAAA44352C5BF732008477C9 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5845322B82E55400911B4E /* SessionManager.swift */; };
 		EAAA44372C5BF896008477C9 /* DetailViewTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAA44362C5BF896008477C9 /* DetailViewTV.swift */; };
-		EAB0F1FD2C63B99D004B5986 /* EarthViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB0F1FC2C63B99D004B5986 /* EarthViewerTests.swift */; };
 		EAB0F2042C63BA88004B5986 /* ViewChangeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB0F2032C63BA88004B5986 /* ViewChangeRequest.swift */; };
 		EAB0F2052C63BA88004B5986 /* ViewChangeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB0F2032C63BA88004B5986 /* ViewChangeRequest.swift */; };
 		EAB0F2072C63BB90004B5986 /* ViewIndexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB0F2062C63BB90004B5986 /* ViewIndexTests.swift */; };
@@ -113,7 +112,6 @@
 		EAAA44312C5BF645008477C9 /* EarthViewTV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthViewTV.swift; sourceTree = "<group>"; };
 		EAAA44362C5BF896008477C9 /* DetailViewTV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewTV.swift; sourceTree = "<group>"; };
 		EAB0F1FA2C63B99D004B5986 /* EarthViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EarthViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EAB0F1FC2C63B99D004B5986 /* EarthViewerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthViewerTests.swift; sourceTree = "<group>"; };
 		EAB0F2032C63BA88004B5986 /* ViewChangeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewChangeRequest.swift; sourceTree = "<group>"; };
 		EAB0F2062C63BB90004B5986 /* ViewIndexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewIndexTests.swift; sourceTree = "<group>"; };
 		EAD638F02B8BB0270012D351 /* FavoriteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteData.swift; sourceTree = "<group>"; };
@@ -276,7 +274,6 @@
 		EAB0F1FB2C63B99D004B5986 /* EarthViewerTests */ = {
 			isa = PBXGroup;
 			children = (
-				EAB0F1FC2C63B99D004B5986 /* EarthViewerTests.swift */,
 				EAB0F2062C63BB90004B5986 /* ViewIndexTests.swift */,
 			);
 			path = EarthViewerTests;
@@ -507,7 +504,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAB0F1FD2C63B99D004B5986 /* EarthViewerTests.swift in Sources */,
 				EAB0F2072C63BB90004B5986 /* ViewIndexTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
