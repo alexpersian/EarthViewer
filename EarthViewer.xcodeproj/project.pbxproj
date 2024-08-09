@@ -33,12 +33,13 @@
 		EAAA44302C5BF491008477C9 /* earthviews.json in Resources */ = {isa = PBXBuildFile; fileRef = EA59BBAD2B6FED09003EC22C /* earthviews.json */; };
 		EAAA44322C5BF645008477C9 /* EarthViewTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAA44312C5BF645008477C9 /* EarthViewTV.swift */; };
 		EAAA44332C5BF6CB008477C9 /* RemoteImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA199CB82B77FC4200754EF2 /* RemoteImageLoader.swift */; };
-		EAAA44342C5BF6D4008477C9 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA59BBB52B714899003EC22C /* ImageView.swift */; };
 		EAAA44352C5BF732008477C9 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5845322B82E55400911B4E /* SessionManager.swift */; };
 		EAAA44372C5BF896008477C9 /* DetailViewTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAA44362C5BF896008477C9 /* DetailViewTV.swift */; };
 		EAB0F2042C63BA88004B5986 /* ViewChangeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB0F2032C63BA88004B5986 /* ViewChangeRequest.swift */; };
 		EAB0F2052C63BA88004B5986 /* ViewChangeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB0F2032C63BA88004B5986 /* ViewChangeRequest.swift */; };
 		EAB0F2072C63BB90004B5986 /* ViewIndexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB0F2062C63BB90004B5986 /* ViewIndexTests.swift */; };
+		EAB0F2262C643A7E004B5986 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA59BBB52B714899003EC22C /* ImageView.swift */; };
+		EAB0F2272C643F36004B5986 /* FavoriteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD638F02B8BB0270012D351 /* FavoriteData.swift */; };
 		EAD638F12B8BB0270012D351 /* FavoriteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD638F02B8BB0270012D351 /* FavoriteData.swift */; };
 		EAD638F92B8D60CF0012D351 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD638F82B8D60CF0012D351 /* WidgetKit.framework */; };
 		EAD638FB2B8D60D00012D351 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD638FA2B8D60D00012D351 /* SwiftUI.framework */; };
@@ -47,7 +48,6 @@
 		EAD639022B8D60D20012D351 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAD639012B8D60D20012D351 /* Assets.xcassets */; };
 		EAD639062B8D60D20012D351 /* EarthViewerWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = EAD638F62B8D60CF0012D351 /* EarthViewerWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		EAD6390D2B8E6A030012D351 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA59BBA02B6FE753003EC22C /* Item.swift */; };
-		EAD6390F2B8E6A0E0012D351 /* FavoriteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD638F02B8BB0270012D351 /* FavoriteData.swift */; };
 		EAD639122B8F95310012D351 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD639112B8F95310012D351 /* DataManager.swift */; };
 		EAD639132B8F9AA50012D351 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD639112B8F95310012D351 /* DataManager.swift */; };
 		EAD639142B8FA10C0012D351 /* RemoteImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA199CB82B77FC4200754EF2 /* RemoteImageLoader.swift */; };
@@ -163,12 +163,12 @@
 		EA199CB42B76848B00754EF2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				EA59BBB12B7000C6003EC22C /* EarthView.swift */,
-				EA59BBBB2B718104003EC22C /* ConfirmationView.swift */,
 				EA59BB9E2B6FE753003EC22C /* ContentView.swift */,
-				EA59BBB72B7148A4003EC22C /* DetailView.swift */,
-				EA59BBB52B714899003EC22C /* ImageView.swift */,
+				EA59BBB12B7000C6003EC22C /* EarthView.swift */,
 				EA9B420B2B8A6F3900801449 /* FavoritesView.swift */,
+				EA59BBB52B714899003EC22C /* ImageView.swift */,
+				EA59BBB72B7148A4003EC22C /* DetailView.swift */,
+				EA59BBBB2B718104003EC22C /* ConfirmationView.swift */,
 				EA9B420D2B8A720D00801449 /* PreviewView.swift */,
 			);
 			path = Views;
@@ -486,11 +486,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAAA44342C5BF6D4008477C9 /* ImageView.swift in Sources */,
 				EAAA442E2C5BF44C008477C9 /* FavoriteData.swift in Sources */,
 				EAAA44352C5BF732008477C9 /* SessionManager.swift in Sources */,
 				EAB0F2052C63BA88004B5986 /* ViewChangeRequest.swift in Sources */,
 				EAAA44372C5BF896008477C9 /* DetailViewTV.swift in Sources */,
+				EAB0F2262C643A7E004B5986 /* ImageView.swift in Sources */,
 				EAAA442D2C5BF438008477C9 /* Item.swift in Sources */,
 				EAAA44222C5BE409008477C9 /* ContentViewTV.swift in Sources */,
 				EAAA44322C5BF645008477C9 /* EarthViewTV.swift in Sources */,
@@ -512,9 +512,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAD6390F2B8E6A0E0012D351 /* FavoriteData.swift in Sources */,
 				EAD639132B8F9AA50012D351 /* DataManager.swift in Sources */,
 				EAD639002B8D60D00012D351 /* EarthViewerWidget.swift in Sources */,
+				EAB0F2272C643F36004B5986 /* FavoriteData.swift in Sources */,
 				EAD6390D2B8E6A030012D351 /* Item.swift in Sources */,
 				EAD639142B8FA10C0012D351 /* RemoteImageLoader.swift in Sources */,
 				EAD639152B8FA1170012D351 /* SessionManager.swift in Sources */,

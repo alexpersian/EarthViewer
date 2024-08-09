@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DetailViewTV: View {
+struct DetailViewTV: View, Equatable {
     let model: Item
 
     var body: some View {

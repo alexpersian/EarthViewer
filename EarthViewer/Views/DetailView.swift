@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct DetailView: View {
+struct DetailView: View, Equatable {
     let model: Item
 
     let openMapsLinkTapped: () -> Void
@@ -56,6 +56,10 @@ struct DetailView: View {
         .padding(.top, 8)
         .background(Color.black.opacity(0.55))
         .cornerRadius(4)
+    }
+
+    static func == (lhs: DetailView, rhs: DetailView) -> Bool {
+        return lhs.model == rhs.model
     }
 }
 

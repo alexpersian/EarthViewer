@@ -19,18 +19,18 @@ struct FavoritesView: View {
     let tappedFavorite: (String) -> Void
 
     var body: some View {
-            List(favorites) { item in
-                PreviewView(model: item)
-                    .listRowSeparator(.hidden)
-                    .onTapGesture {
-                        tappedFavorite(item.id)
-                        dismiss()
-                    }
-            }
-            .listStyle(.plain)
-            .scrollContentBackground(.hidden)
-            .toolbarTitleDisplayMode(.inlineLarge)
-            .navigationTitle("Favorites")
+        List(favorites) { item in
+            PreviewView(model: item)
+                .listRowSeparator(.hidden)
+                .onTapGesture {
+                    tappedFavorite(item.id)
+                    dismiss()
+                }
+        }
+        .listStyle(.plain)
+        .scrollContentBackground(.hidden)
+        .toolbarTitleDisplayMode(.inlineLarge)
+        .navigationTitle("Favorites")
     }
 }
 

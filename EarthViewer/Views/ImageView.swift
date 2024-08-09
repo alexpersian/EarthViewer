@@ -1,16 +1,18 @@
 import SwiftUI
 
-struct ImageView: View {
+struct ImageView: View, Equatable {
     @ObservedObject private var remoteImageLoader: RemoteImageLoader
 
+    private let imageURL: URL
     private let isThumbnail: Bool
 
     init(_ imageURL: String, isThumbnail: Bool) {
         guard let url = URL(string: imageURL) else {
             fatalError("Error: Invalid image URL provided.")
         }
-        remoteImageLoader = RemoteImageLoader(imageURL: url)
+        self.imageURL = url
         self.isThumbnail = isThumbnail
+        remoteImageLoader = RemoteImageLoader(imageURL: url)
     }
 
     var body: some View {
@@ -27,6 +29,11 @@ struct ImageView: View {
                 .colorInvert()
                 .transition(.opacity.animation(.default))
         }
+    }
+
+    static func == (lhs: ImageView, rhs: ImageView) -> Bool {
+        return lhs.imageURL == rhs.imageURL &&
+            lhs.isThumbnail == rhs.isThumbnail
     }
 }
 
