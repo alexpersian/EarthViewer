@@ -12,8 +12,8 @@ struct PreviewView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            ImageView(model.image, isThumbnail: true)
-                .scaledToFill()
+            ImageView(model.image, isThumbnail: true, isForList: true)
+                .aspectRatio(3/2, contentMode: .fill) // source images are 1800x1200
                 .cornerRadius(8)
             Text(model.regionCountryString)
             Spacer()
