@@ -19,7 +19,7 @@ struct EarthViewTV: View {
     private let viewChangeInterval: TimeInterval = 30
 
     var body: some View {
-        let imageView = ImageView(model.image, isThumbnail: false)
+        let imageView = ImageView(model.image)
         let detailView = DetailViewTV(model: model)
 
         ZStack(alignment: .bottomTrailing, content: {

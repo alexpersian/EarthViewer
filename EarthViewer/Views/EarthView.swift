@@ -17,7 +17,7 @@ struct EarthView: View {
     let requestViewChange: (ViewChangeRequest) -> Void
 
     var body: some View {
-        let imageView = ImageView(model.image, isThumbnail: false)
+        let imageView = ImageView(model.image)
         let detailView = DetailView(
             model: model,
             openMapsLinkTapped: { openMaps() },
@@ -26,39 +26,37 @@ struct EarthView: View {
             openFavoritesTapped: { showFavoritesList() }
         )
 
-        NavigationStack {
-            GeometryReader { proxy in
-                ZStack(alignment: .bottom, content: {
-                    imageView
-                        .scaledToFill()
-                        .ignoresSafeArea()
-                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-                        .onTapGesture(coordinateSpace: .global) { loc in
-                            changeImage(advance: loc.x > proxy.size.width / 2)
-                        }
-                        .onLongPressGesture {
-                            showDetails.toggle()
-                        }
+        GeometryReader { proxy in
+            ZStack(alignment: .bottom, content: {
+                imageView
+                    .scaledToFill()
+                    .ignoresSafeArea()
+                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                    .onTapGesture(coordinateSpace: .global) { loc in
+                        changeImage(advance: loc.x > proxy.size.width / 2)
+                    }
+                    .onLongPressGesture {
+                        showDetails.toggle()
+                    }
 
-                    if showDetails {
-                        detailView
-                            .padding(.horizontal, 8)
-                            .zIndex(1)
-                            .transition(.opacity.animation(.easeInOut))
-                    }
-                })
-                .background(.black)
-                .overlay {
-                    if saveSuccess {
-                        ConfirmationView()
-                            .transition(.opacity.animation(.easeInOut))
-                    }
+                if showDetails {
+                    detailView
+                        .padding(.horizontal, 8)
+                        .zIndex(1)
+                        .transition(.opacity.animation(.easeInOut))
                 }
-                .navigationDestination(
-                    isPresented: $showFavorites,
-                    destination: { FavoritesView(tappedFavorite: loadFavorite) }
-                )
+            })
+            .background(.black)
+            .overlay {
+                if saveSuccess {
+                    ConfirmationView()
+                        .transition(.opacity.animation(.easeInOut))
+                }
             }
+            .navigationDestination(
+                isPresented: $showFavorites,
+                destination: { FavoritesView(tappedFavorite: loadFavorite) }
+            )
         }
     }
 
