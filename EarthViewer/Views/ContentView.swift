@@ -13,19 +13,21 @@ struct ContentView: View {
     @StateObject private var viewIndex = ViewIndex()
 
     var body: some View {
-        EarthView(
-            model: views[viewIndex.index],
-            requestViewChange: handle(request:)
-        )
-        .statusBarHidden()
-        .persistentSystemOverlays(.hidden)
-        .onOpenURL(perform: { url in
-            guard let id = url.absoluteString.split(separator: "/").last else {
-                print("Unable to parse id from url.")
-                return
-            }
-            handle(request: .to(id: "\(id)"))
-        })
+        NavigationStack {
+            EarthView(
+                model: views[viewIndex.index],
+                requestViewChange: handle(request:)
+            )
+            .statusBarHidden(true)
+            .persistentSystemOverlays(.hidden)
+            .onOpenURL(perform: { url in
+                guard let id = url.absoluteString.split(separator: "/").last else {
+                    print("Unable to parse id from url.")
+                    return
+                }
+                handle(request: .to(id: "\(id)"))
+            })
+        }
     }
 
     private func handle(request: ViewChangeRequest) {
