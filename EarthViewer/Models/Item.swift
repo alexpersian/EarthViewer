@@ -10,12 +10,12 @@ import SwiftData
 
 @Model
 final class Item: Decodable, Identifiable {
-    @Attribute(.unique) let id: String
-    let image: String
-    let country: String
-    let region: String
-    let map: String
-    let attribution: String
+    @Attribute(.unique) var id: String
+    var image: String
+    var country: String
+    var region: String
+    var map: String
+    var attribution: String
     var faveData: FavoriteData
 
     enum CodingKeys: String, CodingKey {

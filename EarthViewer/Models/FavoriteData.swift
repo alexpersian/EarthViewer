@@ -11,9 +11,9 @@ import SwiftData
 @Model
 final class FavoriteData {
     /// Whether the Item is a favorite or not
-    let isFaved: Bool
+    var isFaved: Bool
     /// Timestamp of when an Item was marked as favorite. Only relevant if `isFaved = true`.
-    let timestamp: Date
+    var timestamp: Date
 
     init(isFaved: Bool, timestamp: Date) {
         self.isFaved = isFaved
