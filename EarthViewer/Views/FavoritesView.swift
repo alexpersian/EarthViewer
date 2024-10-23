@@ -19,18 +19,38 @@ struct FavoritesView: View {
     let tappedFavorite: (String) -> Void
 
     var body: some View {
-        List(favorites) { item in
-            PreviewView(model: item)
-                .listRowSeparator(.hidden)
-                .onTapGesture {
-                    tappedFavorite(item.id)
-                    dismiss()
-                }
+        GeometryReader { proxy in
+            ScrollView {
+                LazyVGrid(
+                    columns: getColumns(for: proxy.size),
+                    content: {
+                        ForEach(favorites) { item in
+                            PreviewView(model: item)
+                                .frame(maxWidth: getMaxWidth(for: proxy.size))
+                                .onTapGesture {
+                                    tappedFavorite(item.id)
+                                    dismiss()
+                                }
+                        }
+                    }
+                )
+                .padding(.horizontal, 8)
+            }
         }
-        .listStyle(.plain)
-        .scrollContentBackground(.hidden)
         .toolbarTitleDisplayMode(.inlineLarge)
         .navigationTitle("Favorites")
+    }
+
+    // >500 width means we are either on an iPad or in landscape*
+    // *non-Plus iPhones still use .compact sizeClass for landscape
+    private let widthBreakpoint: CGFloat = 500
+
+    private func getColumns(for size: CGSize) -> [GridItem] {
+        return size.width > widthBreakpoint ? [GridItem(), GridItem()] : [GridItem()]
+    }
+
+    private func getMaxWidth(for size: CGSize) -> CGFloat {
+        return size.width > widthBreakpoint ? size.width / 2 : size.width
     }
 }
 
